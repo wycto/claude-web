@@ -1,0 +1,37 @@
+{
+  "name": "claude-web",
+  "version": "1.0.0",
+  "description": "Browser UI for Claude Code — session management, model switching, working-dir selection, and change tracking.",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "claude-web": "server/cli.js"
+  },
+  "files": [
+    "server",
+    "web/dist",
+    "ecosystem.config.cjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "node server/setup.js",
+    "dev": "concurrently -n server,web -c cyan,magenta \"CLAUDE_WEB_PORT=8788 node --watch server/index.js\" \"npm --prefix web run dev\"",
+    "build": "npm --prefix web install && npm --prefix web run build",
+    "start": "node server/index.js",
+    "deploy": "npm run build && pm2 startOrReload ecosystem.config.cjs && pm2 save",
+    "pack:offline": "bash scripts/pack-offline.sh",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.177",
+    "cookie": "^1.1.1",
+    "express": "^5.2.1",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

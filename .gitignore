@@ -1,0 +1,23 @@
+node_modules/
+web/node_modules/
+web/dist/
+data/
+*.log
+.DS_Store
+
+# build cache
+web/*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+
+# release artifacts
+*.tar.gz
+*.tgz
+
+.mimocode/
+.omo/
+.opencode/
+.playwright-mcp/
+.claude/
