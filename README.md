@@ -4,6 +4,17 @@
 
 底层通过 **Claude Agent SDK**（`@anthropic-ai/claude-agent-sdk`）驱动，会话与 `claude` CLI 完全互通：网页里建的会话能用 CLI 继续，反之亦然（都存在 `~/.claude/projects/`）。
 
+
+<img width="4666" height="2452" alt="login" src="https://github.com/user-attachments/assets/ebc896a2-b347-4670-82bc-549a8f8fe9e6" />
+
+
+
+<img width="4678" height="2466" alt="index" src="https://github.com/user-attachments/assets/8b4e6bf1-11be-4cdc-afc7-d0ba1366c168" />
+
+
+
+
+
 ## ✨ 功能
 
 - **会话管理** —— 新建 / 恢复 / 重命名 / 删除；列表持久化，跨设备恢复历史
